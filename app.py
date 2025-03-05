@@ -38,60 +38,60 @@ if st.button("Generate"):
             # 🔹 Query the indexed documents for relevant content
             response = query_engine.query(input_text)
 
-# 🔹 Create a GPT-4o prompt based on the selected mode
-if mode == "Job Description":
-    prompt = f"""
-    You are an expert HR consultant generating job descriptions for Rohlik Group.
+            # 🔹 Create a GPT-4o prompt based on the selected mode
+            if mode == "Job Description":
+                prompt = f"""
+                You are an expert HR consultant generating job descriptions for Rohlik Group.
 
-    **Standard Rohlik Group Job Description Format:**
-    # Job Title: {input_text}
+                **Standard Rohlik Group Job Description Format:**
+                # Job Title: {input_text}
 
-    ## About Rohlik Group  
-    Rohlik Group is a leading online grocery company dedicated to delivering fresh, high-quality food with unbeatable convenience. We are innovating the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
+                ## About Rohlik Group  
+                Rohlik Group is a leading online grocery company dedicated to delivering fresh, high-quality food with unbeatable convenience. We are innovating the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
 
-    ## Role Overview  
-    [Generate a professional role overview based on the context below.]
+                ## Role Overview  
+                [Generate a professional role overview based on the context below.]
 
-    ## Key Responsibilities  
-    [List the key job responsibilities based on the context below.]
+                ## Key Responsibilities  
+                [List the key job responsibilities based on the context below.]
 
-    ## Qualifications & Skills  
-    [List essential qualifications and skills based on the context below.]
+                ## Qualifications & Skills  
+                [List essential qualifications and skills based on the context below.]
 
-    ## Why Join Rohlik Group?  
-    - Work with a fast-growing, tech-driven company  
-    - Career development opportunities in a dynamic environment  
-    - Competitive salary & benefits  
+                ## Why Join Rohlik Group?  
+                - Work with a fast-growing, tech-driven company  
+                - Career development opportunities in a dynamic environment  
+                - Competitive salary & benefits  
 
-    **Context from company documents:**  
-    {response}
+                **Context from company documents:**  
+                {response}
 
-    Please fill in the missing sections with structured, professional content.
-    """
+                Please fill in the missing sections with structured, professional content.
+                """
 
-elif mode == "Case Study":
-    prompt = f"""
-    You are a business analyst creating a case study for Rohlik Group. Follow this format:
+            elif mode == "Case Study":
+                prompt = f"""
+                You are a business analyst creating a case study for Rohlik Group. Follow this format:
 
-    # Case Study: {input_text}
+                # Case Study: {input_text}
 
-    ## About Rohlik Group  
-    Rohlik Group is a leading online grocery company dedicated to delivering fresh, high-quality food with unbeatable convenience. We are innovating the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
+                ## About Rohlik Group  
+                Rohlik Group is a leading online grocery company dedicated to delivering fresh, high-quality food with unbeatable convenience. We are innovating the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
 
-    ## Business Challenge  
-    [Generate a professional business challenge based on the context below.]
+                ## Business Challenge  
+                [Generate a professional business challenge based on the context below.]
 
-    ## Solution Implemented  
-    [Describe the solution based on the context below.]
+                ## Solution Implemented  
+                [Describe the solution based on the context below.]
 
-    ## Results & Impact  
-    [Summarize the key outcomes based on the context below.]
+                ## Results & Impact  
+                [Summarize the key outcomes based on the context below.]
 
-    **Context from company documents:**  
-    {response}
+                **Context from company documents:**  
+                {response}
 
-    Please complete the case study with well-structured, professional content.
-    """
+                Please complete the case study with well-structured, professional content.
+                """
 
 
             # 🔹 Get GPT-4o to generate the content
