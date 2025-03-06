@@ -99,8 +99,6 @@ if st.button("Generate"):
                 - A **PowerPoint slide** summarizing key recommendations  
                 - Supporting **data, research, or cost-benefit analysis** (if applicable)  
 
-                ---
-                **Important:** Do **NOT** provide a solution—only structure the case study and its questions.
                 """
 
 
