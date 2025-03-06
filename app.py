@@ -71,45 +71,36 @@ if st.button("Generate"):
 
             elif mode == "Case Study":
                 prompt = f"""
-                You are a business consultant creating a structured case study for Rohlik Group. 
-                This case study will be used to assess candidates' problem-solving abilities. 
-                The case study **must** follow the structured format below.
+                You are designing a structured case study for candidates applying to Rohlik Group. 
+                The case study should test problem-solving, data analysis, and strategic thinking. 
+                **Do NOT provide the answer**—the goal is to present the challenge for the candidate.
 
                 # 📌 Case Study: {input_text}
 
                 ## **Company Overview**  
-                Rohlik Group is a leading online grocery company dedicated to delivering fresh, high-quality food with unbeatable convenience. We are innovating the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
+                Rohlik Group is a leading online grocery company delivering fresh, high-quality food with unbeatable convenience. We are transforming the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
 
                 ## **Business Challenge**  
-                Describe a real-world business problem related to {input_text}. 
-                The problem should be specific, measurable, and relevant to Rohlik Group’s operations. 
-                Example structure:  
-                - The **main issue** Rohlik Group faced  
-                - The **context** in which the issue occurred  
-                - The **implications** of not solving the problem  
+                Provide a **brief, structured problem statement** relevant to {input_text}.  
+                - 🔹 **Main issue:** Describe the core challenge in 2-3 sentences.  
+                - 🔹 **Context:** What situation led to this issue? (Keep it short, max 2 sentences)  
+                - 🔹 **Implications:** What risks or impacts does this challenge create? (Bullet points, 2-3 max)  
 
                 ## **Candidate Task**  
-                The candidate must provide a structured analysis by answering these key questions:
-                1️⃣ **How would you approach solving this problem?**  
-                2️⃣ **What key data points or research would you gather?**  
+                The candidate must develop a structured response addressing the problem by answering:  
+                1️⃣ **How would you approach solving this issue?**  
+                2️⃣ **What key data points or market research would you use?**  
                 3️⃣ **What possible solutions would you consider?**  
-                4️⃣ **How would you measure the success of your solution?**  
-                5️⃣ **What are the risks and trade-offs of your approach?**  
+                4️⃣ **How would you evaluate the effectiveness of your solution?**  
+                5️⃣ **What risks and trade-offs should Rohlik Group be aware of?**  
 
-                ## **Expected Deliverables from Candidate**  
-                - A structured 1-2 page written response  
-                - A PowerPoint slide with a high-level summary of the recommended solution  
-                - Supporting data, charts, or research (if applicable)  
-
-                ## **Solution Implemented by Rohlik Group**  
-                Based on the retrieved document context, describe the **actual solution** Rohlik Group implemented to address this challenge.  
-
-                ## **Results & Impact**  
-                Provide quantifiable metrics on how the solution improved operations, revenue, efficiency, or customer satisfaction.
+                ## **Expected Deliverables**  
+                - A structured **1-2 page written response** outlining the proposed solution  
+                - A **PowerPoint slide** summarizing key recommendations  
+                - Supporting **data, research, or cost-benefit analysis** (if applicable)  
 
                 ---
-
-                Please generate a case study following this structure. Ensure the output is actionable and ready to be given to candidates.
+                **Important:** Do **NOT** provide a solution—only structure the case study and its questions.
                 """
 
 
