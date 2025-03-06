@@ -5,6 +5,34 @@ from llama_index.core import SimpleDirectoryReader, VectorStoreIndex
 from llama_index.embeddings.openai import OpenAIEmbedding
 from llama_index.core.settings import Settings
 
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+import io
+
+def generate_pdf(content, filename="generated_document.pdf"):
+    """Generate a downloadable PDF from given text content."""
+    buffer = io.BytesIO()
+    pdf = canvas.Canvas(buffer, pagesize=letter)
+    pdf.setFont("Helvetica", 12)
+
+    # Split the text into lines and write them to the PDF
+    y_position = 750  # Start writing from the top
+    for line in content.split("\n"):
+        pdf.drawString(50, y_position, line)
+        y_position -= 20  # Move down for next line
+
+        # Ensure we don't write off the page
+        if y_position < 50:
+            pdf.showPage()
+            pdf.setFont("Helvetica", 12)
+            y_position = 750
+
+    pdf.save()
+    buffer.seek(0)
+
+    return buffer
+
+
 # 🔹 Load OpenAI API Key
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 openai_client = openai.OpenAI(api_key=openai_api_key)
@@ -103,3 +131,14 @@ if st.button("Generate"):
             # 🔹 Display the output
             st.subheader("📢 Generated Content:")
             st.write(chat_response.choices[0].message.content)
+
+            # Add a button to download the generated content as a PDF
+            if st.button("Download as PDF"):
+                pdf_buffer = generate_pdf(chat_response.choices[0].message.content)
+                st.download_button(
+                    label="📥 Click to Download PDF",
+                    data=pdf_buffer,
+                    file_name=f"{mode.replace(' ', '_')}.pdf",
+                    mime="application/pdf"
+    )
+
