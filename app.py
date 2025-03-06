@@ -108,8 +108,6 @@ if st.button("Generate"):
                 Provide quantifiable metrics on how the solution improved operations, revenue, efficiency, or customer satisfaction.
 
                 ---
-                **Context from company documents:**  
-                {response}
 
                 Please generate a case study following this structure. Ensure the output is actionable and ready to be given to candidates.
                 """
