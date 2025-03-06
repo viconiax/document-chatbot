@@ -71,27 +71,49 @@ if st.button("Generate"):
 
             elif mode == "Case Study":
                 prompt = f"""
-                You are a business analyst creating a case study for Rohlik Group. Follow this format:
+                You are a business consultant creating a structured case study for Rohlik Group. 
+                This case study will be used to assess candidates' problem-solving abilities. 
+                The case study **must** follow the structured format below.
 
-                # Case Study: {input_text}
+                # 📌 Case Study: {input_text}
 
-                ## About Rohlik Group  
+                ## **Company Overview**  
                 Rohlik Group is a leading online grocery company dedicated to delivering fresh, high-quality food with unbeatable convenience. We are innovating the grocery industry through cutting-edge technology, automated warehouses, and outstanding customer service.
 
-                ## Business Challenge  
-                [Generate a professional business challenge based on the context below.]
+                ## **Business Challenge**  
+                Describe a real-world business problem related to {input_text}. 
+                The problem should be specific, measurable, and relevant to Rohlik Group’s operations. 
+                Example structure:  
+                - The **main issue** Rohlik Group faced  
+                - The **context** in which the issue occurred  
+                - The **implications** of not solving the problem  
 
-                ## Solution Implemented  
-                [Describe the solution based on the context below.]
+                ## **Candidate Task**  
+                The candidate must provide a structured analysis by answering these key questions:
+                1️⃣ **How would you approach solving this problem?**  
+                2️⃣ **What key data points or research would you gather?**  
+                3️⃣ **What possible solutions would you consider?**  
+                4️⃣ **How would you measure the success of your solution?**  
+                5️⃣ **What are the risks and trade-offs of your approach?**  
 
-                ## Results & Impact  
-                [Summarize the key outcomes based on the context below.]
+                ## **Expected Deliverables from Candidate**  
+                - A structured 1-2 page written response  
+                - A PowerPoint slide with a high-level summary of the recommended solution  
+                - Supporting data, charts, or research (if applicable)  
 
+                ## **Solution Implemented by Rohlik Group**  
+                Based on the retrieved document context, describe the **actual solution** Rohlik Group implemented to address this challenge.  
+
+                ## **Results & Impact**  
+                Provide quantifiable metrics on how the solution improved operations, revenue, efficiency, or customer satisfaction.
+
+                ---
                 **Context from company documents:**  
                 {response}
 
-                Please complete the case study with well-structured, professional content.
+                Please generate a case study following this structure. Ensure the output is actionable and ready to be given to candidates.
                 """
+
 
 
             # 🔹 Get GPT-4o to generate the content
