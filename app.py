@@ -105,5 +105,5 @@ if st.button("Generate"):
             st.write(chat_response.choices[0].message.content)
 
 
-    )
+    
 
